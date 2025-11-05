@@ -27,15 +27,13 @@ int main()
     printf("Gia tri nho nhat trong mang la: %d\n", min);
     // Selection sort
      for (i = 0; i < n - 1; i++) {
-        int minIndex = i;
         for (j = i + 1; j < n; j++) {
-            if (arrayInt[j] < arrayInt[minIndex]) {
-                minIndex = j;
+            if (arrayInt[i] > arrayInt[j]) {
+                temp_num = arrayInt[i];
+                arrayInt[i] = arrayInt[minIndex];
+                arrayInt[minIndex] = temp_num;
             }
         }
-        temp_num = arrayInt[i];
-        arrayInt[i] = arrayInt[minIndex];
-        arrayInt[minIndex] = temp_num;
     }
     printf("Mang sau khi sap xep tang dan: ");
     for (i = 0; i < n; i++) {
